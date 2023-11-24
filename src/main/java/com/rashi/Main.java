@@ -10,6 +10,7 @@ import com.rashi.behavioral.Strategy.OperationAdd;
 import com.rashi.behavioral.Strategy.OperationSubstract;
 import com.rashi.creational.factoryDesignPatterns.Shape;
 import com.rashi.creational.factoryDesignPatterns.ShapeFactory;
+import com.rashi.creational.protoTypeDesignPatterns.ShapeCache;
 import com.rashi.creational.singletonDesignPatterns.SingletonDesignPatternIMPL;
 import com.rashi.structural.decoratorDesignPattern.Rectangle;
 import com.rashi.structural.decoratorDesignPattern.RedShapeDecorate;
@@ -93,8 +94,20 @@ public class Main {
         Context contextMul=new Context(new OparationMultiply());
         System.out.println("Multiply  :- " +contextMul.executeOperation(64,36));
 
+//=====================================================================================
 
+        System.out.println("\n\n==========PROTOTYPE DESIGN PATTEN================");
 
+        ShapeCache.loadCache();
+
+        com.rashi.creational.protoTypeDesignPatterns.Shape clonedShape= (com.rashi.creational.protoTypeDesignPatterns.Shape) ShapeCache.getShape("1");
+        System.out.println("Shape : " + clonedShape.getType());
+
+        com.rashi.creational.protoTypeDesignPatterns.Shape clonedShape2 = (com.rashi.creational.protoTypeDesignPatterns.Shape) ShapeCache.getShape("2");
+        System.out.println("Shape : " + clonedShape2.getType());
+
+        com.rashi.creational.protoTypeDesignPatterns.Shape clonedShape3 = (com.rashi.creational.protoTypeDesignPatterns.Shape) ShapeCache.getShape("3");
+        System.out.println("Shape : " + clonedShape3.getType());
 
     }
 }
