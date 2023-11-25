@@ -3,6 +3,8 @@ package com.rashi.structural;
 import com.rashi.structural.decoratorDesignPattern.Rectangle;
 import com.rashi.structural.decoratorDesignPattern.RedShapeDecorate;
 import com.rashi.structural.facadeDesignPattern.ShapeMaker;
+import com.rashi.structural.proxyDesignPattern.Image;
+import com.rashi.structural.proxyDesignPattern.ProxyImage;
 
 public class MainMethod {
     public static void main(String[] args) {
@@ -25,6 +27,14 @@ public class MainMethod {
         RedShapeDecorate rectangleRedShapeDecorate=new RedShapeDecorate(new com.rashi.structural.decoratorDesignPattern.Rectangle());
         rectangleRedShapeDecorate.draw();
 
+//==============================================================================
 
+        System.out.println("\n\n==========PROXY DESIGN PATTEN================");
+        Image image=new ProxyImage("test.jpg");
+
+        image.display();
+        System.out.println(" ");
+
+        image.display();
     }
 }
