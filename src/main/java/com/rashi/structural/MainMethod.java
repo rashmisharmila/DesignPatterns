@@ -1,5 +1,9 @@
 package com.rashi.structural;
 
+import com.rashi.structural.AdapterDesignPattern.BirdAdapter;
+import com.rashi.structural.AdapterDesignPattern.PlasticToyDuck;
+import com.rashi.structural.AdapterDesignPattern.Sparrow;
+import com.rashi.structural.AdapterDesignPattern.ToyDuck;
 import com.rashi.structural.decoratorDesignPattern.Rectangle;
 import com.rashi.structural.decoratorDesignPattern.RedShapeDecorate;
 import com.rashi.structural.facadeDesignPattern.ShapeMaker;
@@ -36,5 +40,23 @@ public class MainMethod {
         System.out.println(" ");
 
         image.display();
+
+//==============================================================================
+
+        System.out.println("\n\n==========ADAPTER DESIGN PATTEN================");
+        Sparrow sparrow=new Sparrow();
+        ToyDuck toyDuck=new PlasticToyDuck();
+
+        ToyDuck birdAdapter=new BirdAdapter(sparrow);
+
+        System.out.println("Sparrow...");
+        sparrow.fly();
+        sparrow.makeSound();
+
+        System.out.println("\nToyDuck...");
+        toyDuck.squeak();
+
+        System.out.println("\nBirdAdapter...");
+        birdAdapter.squeak();
     }
 }
